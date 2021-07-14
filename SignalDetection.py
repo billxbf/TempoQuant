@@ -64,7 +64,7 @@ def alert(tolerance=0.005):
         try:
             if tq.getPrice(stock) <= watches[stock][1] * (1+tolerance):
                 #Alert
-                yield "[[Trade Alert]] {} reaches support level {} given {}% tolerance. Mind support downbreak with high volumn.".format(stock, watches[stock][1], tolerance)
+                yield "[[Trade Alert]] {} reaches support level {} given {}% tolerance. Mind support downbreak with high volumn.".format(stock, np.round(watches[stock][1],2), tolerance)
                 alerted += [stock]
         except:
             pass
